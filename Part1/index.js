@@ -26,16 +26,46 @@ const bottomRight = board[8];
 
 if(topLeft !== undefined && topLeft === topCenter && topRight === topLeft){
     alert(`${topLeft} wins!`);
+    return;
 }
 if(midLeft !== undefined && midLeft === midCenter && midLeft === midRight){
     alert(`${midLeft} wins!`);
+    return;
 }
 if(bottomLeft !== undefined && bottomLeft === bottomCenter && bottomLeft === bottomRight){
     alert(`${bottomLeft} wins!`);
+    return;
 }
 if(topLeft !== undefined && midLeft === topLeft && topLeft === bottomLeft){
     alert(`${topLeft} wins!`);
+    return;
 }
 if(topCenter !== undefined && topCenter === midCenter && topCenter === bottomCenter){
     alert(`${topCenter} wins`);
+    return;
 }
+if(topRight !== undefined && topRight === topCenter && topRight === topLeft){
+    alert(`${topRight} wins!`);
+    return;
+}
+if(topRight !== undefined && midCenter === topRight && bottomLeft === topRight){
+    alert(`${topRight} wins!`);
+    return;
+}
+if(topLeft !== undefined && topLeft === midCenter && topLeft === bottomRight){
+    alert(`${topLeft} wins!`);
+    return;
+}
+
+let boardFull = true;
+for(let i = 0; i <= 8; i++){
+    if(board[i] === undefined){
+        boardFull = false;
+    } else if(boardFull === true){
+        alert(`Cat's game! Try again.`);
+    }
+}
+
+// function reset (){
+
+// }
